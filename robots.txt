@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ваш-сайт.ru/sitemap.xml
+
+# Запрещаем только потенциально опасные или служебные пути
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /404/
