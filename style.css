@@ -837,6 +837,35 @@ h6 {
   cursor: grabbing;
 }
 
+/* Описание about */
+.about {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+
+.about__title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.about__text {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.about__list {
+  max-width: 700px;
+  margin: 20px auto;
+  padding-left: 20px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
 /* Преимущества sofa */
 .sofa-advantages {
   padding: 80px 0;
@@ -946,35 +975,6 @@ h6 {
   color: orange;
   font-weight: bold;
   font-size: 18px;
-}
-
-/* Описание leather */
-.about {
-  padding: 80px 0;
-  background: #f9f9f9;
-}
-
-.about__title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #2c3e50;
-}
-
-.about__text {
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 20px;
-  max-width: 800px;
-  margin: 0 auto 20px;
-}
-
-.about__list {
-  max-width: 700px;
-  margin: 20px auto;
-  padding-left: 20px;
-  font-size: 18px;
-  line-height: 1.7;
 }
 
 /* Преимущества leather */
@@ -1414,6 +1414,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
