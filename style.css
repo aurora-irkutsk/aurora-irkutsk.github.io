@@ -1238,6 +1238,7 @@ h6 {
 /* === БУРГЕР И МОБИЛЬНОЕ МЕНЮ (ТОЛЬКО ДЛЯ МОБИЛЬНЫХ) === */
 @media (max-width: 768px) {
   /* Скрываем десктопные элементы */
+  
   .header__nav,
   .header__button {
     display: none;
@@ -1245,7 +1246,7 @@ h6 {
 
   /* Показываем бургер */
   .burger {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 28px;
@@ -1285,7 +1286,7 @@ h6 {
     width: 100vw;
     height: 100vh;
     background-color: #333;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1474,6 +1475,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
