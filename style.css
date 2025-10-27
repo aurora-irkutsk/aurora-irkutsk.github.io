@@ -1241,6 +1241,15 @@ h6 {
   }
 
   /* Шапка */
+.header {
+  padding: 10px 15px; /* Уменьшаем отступы */
+  height: auto; /* Убираем фиксированную высоту */
+  background-color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
   .header__inner {
     flex-direction: raw;
     padding: 15px 0;
@@ -1258,6 +1267,11 @@ h6 {
     padding: 8px 16px;
     font-size: 14px;
   }
+
+  /* Убираем изображение логотипа — если есть класс header__logo-img */
+.header__logo-img {
+  display: none; /* Полностью скрываем изображение */
+}
 
   /* Hero */
   .hero {
@@ -1402,9 +1416,10 @@ h6 {
   }
 
   .logo {
-    font-size: 1.4rem;
-    font-weight: bold;
+    font-size: 1.4rem; /* Можно немного уменьшить, если нужно */
     color: white;
+    font-weight: bold;
+    margin: 0; /* Убираем лишние отступы */
   }
 
   /* Скрыть стандартное десктопное меню */
@@ -1534,6 +1549,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
