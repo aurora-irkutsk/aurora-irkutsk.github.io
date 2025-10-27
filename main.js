@@ -88,16 +88,6 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('click', (e) => {
       if (e.target === callModal) closeCallModal();
     });
-
-    // Обработка отправки формы
-    if (callForm) {
-      callForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // если хочешь кастомную отправку
-        // Но Formspree работает и без этого — можно оставить как есть
-        // Или показать "спасибо":
-        // callForm.innerHTML = '<p style="text-align:center; color:white; font-size:18px;">Спасибо! Скоро перезвоним.</p>';
-      });
-    }
   }
 
   // =============
@@ -105,3 +95,4 @@ document.addEventListener('DOMContentLoaded', function () {
   // =============
   // Аналогично можно добавить, если создашь estimateModal
 });
+
