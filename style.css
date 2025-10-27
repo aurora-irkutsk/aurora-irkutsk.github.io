@@ -1320,7 +1320,7 @@ h6 {
 
   .mobile-cta {
     background: orange;
-    color: #fff !important;
+    color: #333 !important;
     padding: 10px 25px;
     border-radius: 30px;
     font-weight: bold;
@@ -1480,6 +1480,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
