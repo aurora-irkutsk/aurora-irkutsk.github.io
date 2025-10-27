@@ -96,3 +96,37 @@ document.addEventListener('DOMContentLoaded', function () {
   // Аналогично можно добавить, если создашь estimateModal
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const burger = document.querySelector('.burger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  if (!burger || !mobileMenu) return;
+
+  // Открыть/закрыть по бургеру
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+
+  // Закрыть по клику на ссылку
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    });
+  });
+
+  // Закрыть по клику вне меню
+  document.addEventListener('click', (e) => {
+    if (
+      !mobileMenu.contains(e.target) &&
+      !burger.contains(e.target) &&
+      mobileMenu.classList.contains('active')
+    ) {
+      burger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    }
+  });
+});
+
+
