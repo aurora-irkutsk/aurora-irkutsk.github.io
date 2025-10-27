@@ -1235,8 +1235,232 @@ h6 {
 /* --------------------------------------------------
    МОБИЛЬНЫЕ УСТРОЙСТВА (до 768px)
    -------------------------------------------------- */
+/* === БУРГЕР И МОБИЛЬНОЕ МЕНЮ (ТОЛЬКО ДЛЯ МОБИЛЬНЫХ) === */
+@media (max-width: 768px) {
+  /* Скрываем десктопные элементы */
+  .header__nav,
+  .header__button {
+    display: none;
+  }
 
+  /* Показываем бургер */
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+  }
 
+  .burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: orange;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Анимация крестика */
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Мобильное меню */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .mobile-menu a:hover {
+    color: orange;
+  }
+
+  .mobile-cta {
+    background: orange;
+    color: #333 !important;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+}
+
+/* === АДАПТИВ: МОБИЛЬНЫЕ УСТРОЙСТВА (до 768px) === */
+@media (max-width: 768px) {
+  /* Шапка */
+  .header__inner {
+    padding: 10px 15px;
+  }
+
+  .header__logo {
+    padding: 0;
+  }
+
+  .header__logo-text {
+    font-size: 1.4rem; /* ~20px */
+  }
+
+  /* Hero */
+  .hero {
+    padding: 0 10px;
+    min-height: auto;
+    text-align: center;
+    align-items: flex-start;
+  }
+
+  .hero__title {
+    font-size: 26px;
+    line-height: 1.4;
+    margin-top: 20px; /* опускаем на 20px */
+    margin-bottom: 20px;
+  }
+
+  .hero__text {
+    font-size: 18px;
+    max-width: none;
+  }
+
+  .hero__button {
+    padding: 12px 24px;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+  /* Сетки — 1 колонка */
+  .services__list,
+  .advantages__list,
+  .reviews__list {
+    grid-template-columns: 1fr !important;
+    gap: 25px;
+  }
+
+  .steps__list {
+    grid-template-columns: 1fr !important;
+    gap: 25px;
+  }
+
+  .portfolio__list {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Заголовки секций */
+  .services__title,
+  .advantages__title,
+  .steps__title,
+  .portfolio__title,
+  .reviews__title,
+  .contacts__title {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  /* Контакты */
+  .contacts__wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .contacts__map iframe {
+    height: 220px;
+  }
+
+  /* Форма заявки */
+  .request {
+    padding: 60px 0;
+  }
+
+  .request__title {
+    font-size: 28px;
+  }
+
+  .request__text {
+    font-size: 16px;
+  }
+
+  /* Footer */
+  .footer__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .footer__nav {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* === АДАПТИВ: ПЛАНШЕТЫ (769px – 1024px) === */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header__inner {
+    padding: 0 20px;
+  }
+
+  .hero {
+    padding: 40px 40px;
+  }
+
+  .hero__title {
+    font-size: 42px;
+  }
+
+  .hero__text {
+    font-size: 20px;
+  }
+
+  /* Сетки — 2 колонки */
+  .services__list,
+  .advantages__list,
+  .reviews__list,
+  .portfolio__list {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 25px;
+  }
+
+  .steps__list {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .contacts__wrapper {
+    gap: 30px;
+  }
+}
 
 
 
