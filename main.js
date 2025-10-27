@@ -11,8 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
 // Галерея (Lightbox)
 // =============
 function initGallery() {
+  // Отключаем галерею на мобильных и планшетах
+  if (window.innerWidth < 768) {
+    return;
+  }
+
   const imageModal = document.getElementById('imageModal');
-  // Если модалки нет на странице — выходим
   if (!imageModal) return;
 
   const modalImg = document.getElementById('modalImage');
@@ -26,7 +30,6 @@ function initGallery() {
 
   let currentIndex = 0;
 
-  // Открытие по клику
   images.forEach((img, index) => {
     img.addEventListener('click', () => {
       currentIndex = index;
@@ -44,21 +47,16 @@ function initGallery() {
     }
   }
 
-  // Закрытие
   const closeModal = () => {
     imageModal.style.display = 'none';
     document.body.style.overflow = '';
   };
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeModal);
-  }
-
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
   imageModal.addEventListener('click', (e) => {
     if (e.target === imageModal) closeModal();
   });
 
-  // Навигация
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
@@ -77,7 +75,6 @@ function initGallery() {
     });
   }
 
-  // Управление с клавиатуры
   document.addEventListener('keydown', (e) => {
     if (imageModal.style.display !== 'block') return;
     if (e.key === 'ArrowLeft') prevBtn?.click();
@@ -152,3 +149,4 @@ function initCallModal() {
     if (e.target === callModal) closeCallModal();
   });
 }
+
