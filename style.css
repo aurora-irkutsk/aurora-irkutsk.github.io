@@ -1244,12 +1244,9 @@ h6 {
 
   /* Шапка */
   .header__inner {
-    padding: 10px 15px;
-    background-color: #333;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
+    flex-direction: raw;
+    padding: 15px 0;
+    gap: 20px;
   }
 
   /* Скрываем десктопное меню и кнопку */
@@ -1536,6 +1533,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
