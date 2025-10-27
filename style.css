@@ -1235,43 +1235,40 @@ h6 {
 /* --------------------------------------------------
    МОБИЛЬНЫЕ УСТРОЙСТВА (до 768px)
    -------------------------------------------------- */
+
+  /* Общий контейнер */
 @media (max-width: 768px) {
   .container {
-    padding: 0 5px;
+    padding: 0 10px;
   }
 
   /* Шапка */
-.header {
-  padding: 10px 15px; /* Уменьшаем отступы */
-  height: auto; /* Убираем фиксированную высоту */
-  background-color: #333;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-  
   .header__inner {
-    flex-direction: raw;
-    padding: 15px 0;
-    gap: 20px;
+    padding: 10px 15px;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
   }
 
-  .header__nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-right: 0;
-  }
-
+  /* Скрываем десктопное меню и кнопку */
+  .header__nav,
   .header__button {
-    padding: 8px 16px;
-    font-size: 14px;
+    display: none;
   }
 
-  /* Убираем изображение логотипа — если есть класс header__logo-img */
-.header__logo-img {
-  display: none; /* Полностью скрываем изображение */
-}
+  /* Логотип — только текст */
+  .header__logo-img {
+    display: none;
+  }
+
+  .header__logo-text {
+    font-size: 1.4rem;
+    color: white;
+    margin: 0;
+  }
+
 
   /* Hero */
   .hero {
@@ -1405,16 +1402,6 @@ h6 {
 
 /* Скрыть обычное меню на мобильных */
 @media (max-width: 768px) {
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    position: relative;
-    background: #333;
-    color: white;
-  }
-
   .logo {
     font-size: 1.4rem; /* Можно немного уменьшить, если нужно */
     color: white;
@@ -1549,6 +1536,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
