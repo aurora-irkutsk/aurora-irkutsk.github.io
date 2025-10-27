@@ -1,90 +1,107 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImage');
-  const closeBtn = document.querySelector('.modal__close');
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const counter = document.getElementById('imageCounter');
+  // =============
+  // Галерея (Lightbox)
+  // =============
+  const imageModal = document.getElementById('imageModal');
+  if (imageModal) {
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = imageModal.querySelector('.modal__close');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const counter = document.getElementById('imageCounter');
+    const images = document.querySelectorAll('.portfolio__item img');
+    let currentIndex = 0;
 
-  const images = document.querySelectorAll('.portfolio__item img');
-  let currentIndex = 0;
+    if (images.length > 0) {
+      images.forEach((img, index) => {
+        img.addEventListener('click', () => {
+          currentIndex = index;
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+          imageModal.style.display = 'block';
+          updateCounter();
+          document.body.style.overflow = 'hidden';
+        });
+      });
 
-  // Открытие модального окна
-  images.forEach((img, index) => {
-    img.addEventListener('click', () => {
-      currentIndex = index;
-      modalImg.src = img.src;
-      modal.style.display = 'block';
-      updateCounter();
-    });
-  });
+      function updateCounter() {
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+      }
 
-  // Закрытие по крестику или клику вне изображения
-  closeBtn.onclick = () => modal.style.display = 'none';
-  modal.onclick = (e) => {
-    if (e.target === modal) modal.style.display = 'none';
-  };
+      // Закрытие
+      const closeModal = () => {
+        imageModal.style.display = 'none';
+        document.body.style.overflow = '';
+      };
 
-  // Переключение стрелками
-  prevBtn.onclick = () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-    modalImg.src = images[currentIndex].src;
-    updateCounter();
-  };
+      closeBtn?.addEventListener('click', closeModal);
+      imageModal.addEventListener('click', (e) => {
+        if (e.target === imageModal) closeModal();
+      });
 
-  nextBtn.onclick = () => {
-    currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-    modalImg.src = images[currentIndex].src;
-    updateCounter();
-  };
+      // Навигация
+      prevBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
+        modalImg.src = images[currentIndex].src;
+        modalImg.alt = images[currentIndex].alt;
+        updateCounter();
+      });
 
-  // Управление клавиатурой (← → Esc)
-  document.addEventListener('keydown', (e) => {
-    if (modal.style.display !== 'block') return;
-    if (e.key === 'ArrowLeft') prevBtn.click();
-    if (e.key === 'ArrowRight') nextBtn.click();
-    if (e.key === 'Escape') modal.style.display = 'none';
-  });
+      nextBtn?.addEventListener('click', () => {
+        currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+        modalImg.src = images[currentIndex].src;
+        modalImg.alt = images[currentIndex].alt;
+        updateCounter();
+      });
 
-  function updateCounter() {
-    counter.textContent = `${currentIndex + 1} / ${images.length}`;
-  }
-});
-
-// Попап "Вызвать мастера"
-document.addEventListener('DOMContentLoaded', function () {
-  const modal = document.getElementById('callModal');
-  const openBtn = document.getElementById('openCallModal');
-  const closeBtn = document.getElementById('closeCallModal');
-  const form = document.getElementById('callForm');
-
-  if (!openBtn || !modal || !closeBtn) return;
-
-  // Открытие
-  openBtn.addEventListener('click', () => {
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden'; // запрет прокрутки
-  });
-
-  // Закрытие по крестику
-  closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
-    document.body.style.overflow = ''; // вернуть прокрутку
-  });
-
-  // Закрытие по клику вне окна
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.style.display = 'none';
-      document.body.style.overflow = '';
+      // Клавиатура
+      document.addEventListener('keydown', (e) => {
+        if (imageModal.style.display !== 'block') return;
+        if (e.key === 'ArrowLeft') prevBtn?.click();
+        if (e.key === 'ArrowRight') nextBtn?.click();
+        if (e.key === 'Escape') closeModal();
+      });
     }
-  });
-
-  // Отправка формы (опционально: можно показать "спасибо")
-  if (form) {
-    form.addEventListener('submit', (e) => {
-      // Можно добавить обработку успешной отправки
-      // Пока просто отправляем через Formspree
-    });
   }
+
+  // =============
+  // Попап "Вызвать мастера"
+  // =============
+  const callModal = document.getElementById('callModal');
+  const openCallBtn = document.getElementById('openCallModal');
+  const closeCallBtn = document.getElementById('closeCallModal');
+  const callForm = document.getElementById('callForm');
+
+  if (callModal && openCallBtn && closeCallBtn) {
+    const openCallModal = () => {
+      callModal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeCallModal = () => {
+      callModal.style.display = 'none';
+      document.body.style.overflow = '';
+    };
+
+    openCallBtn.addEventListener('click', openCallModal);
+    closeCallBtn.addEventListener('click', closeCallModal);
+    window.addEventListener('click', (e) => {
+      if (e.target === callModal) closeCallModal();
+    });
+
+    // Обработка отправки формы
+    if (callForm) {
+      callForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // если хочешь кастомную отправку
+        // Но Formspree работает и без этого — можно оставить как есть
+        // Или показать "спасибо":
+        // callForm.innerHTML = '<p style="text-align:center; color:white; font-size:18px;">Спасибо! Скоро перезвоним.</p>';
+      });
+    }
+  }
+
+  // =============
+  // Попап "Рассчитать стоимость" (если добавишь позже)
+  // =============
+  // Аналогично можно добавить, если создашь estimateModal
 });
