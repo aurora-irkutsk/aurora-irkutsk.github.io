@@ -8,13 +8,13 @@
       content="Перетяжка кожаной мебели в Иркутске — восстановление диванов и кресел из кожи. Заменим обивку, вернём блеск. Гарантия год. Бесплатный выезд мастера."
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <script src="main.js" defer></script>
     <title>
       Перетяжка кожаной мебели — Aurora | Восстановление диванов и кресел из
       кожи в Иркутске
@@ -402,37 +402,9 @@
         </form>
       </div>
     </div>
-    <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const burger = document.querySelector('.burger');
-    const mobileMenu = document.querySelector('.mobile-menu');
-
-    // Открыть/закрыть по клику на бургер
-    burger.addEventListener('click', function () {
-      burger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-    });
-
-    // Закрыть по клику на ссылку
-    const menuLinks = document.querySelectorAll('.mobile-menu a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        burger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      });
-    });
-
-    // Закрыть по клику вне меню
-    document.addEventListener('click', function (e) {
-      if (!mobileMenu.contains(e.target) && !burger.contains(e.target) && mobileMenu.classList.contains('active')) {
-        burger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-      }
-    });
-  });
-</script>
   </body>
 </html>
+
 
 
 
