@@ -845,7 +845,7 @@ h6 {
 
 .about__title {
   text-align: center;
-  font-size: 36px;
+  font-size: clamp(22px, 5vw, 32px);
   margin-bottom: 40px;
   color: #2c3e50;
 }
@@ -1414,6 +1414,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
