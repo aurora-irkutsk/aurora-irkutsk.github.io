@@ -1294,7 +1294,7 @@ h6 {
     width: 100vw;
     height: 100vh;
     background-color: #333;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1483,6 +1483,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
