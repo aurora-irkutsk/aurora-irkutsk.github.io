@@ -1388,6 +1388,108 @@ h6 {
   }
 }
 
+/* Скрыть обычное меню на мобильных */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+    background: #333;
+    color: white;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  /* Скрыть стандартное десктопное меню */
+  nav:not(.mobile-menu) {
+    display: none;
+  }
+
+  /* Стили бургер-кнопки */
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+  }
+
+  .burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: orange; /* цвет бургера */
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Мобильное меню (изначально скрыто) */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  .mobile-menu a:hover {
+    color: orange;
+  }
+
+  .mobile-cta {
+    background: orange;
+    color: #333 !important;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+  }
+
+  /* Активное состояние — меню открыто */
+  .mobile-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Анимация бургера при открытии (крестик) */
+  .burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  .burger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
 /* --------------------------------------------------
    ПЛАНШЕТЫ (769px – 1024px)
    -------------------------------------------------- */
@@ -1431,5 +1533,6 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
