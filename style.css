@@ -866,20 +866,20 @@ h6 {
   line-height: 1.7;
 }
 
-/* Блок "Что входит в перетяжку" — список с галочками */
-.advantages-included {
+/* Блок "Что входит в перетяжку" — список с галочками преимущества на посадочных */
+.included-services {
   padding: 80px 0;
   background: white;
 }
 
-.advantages-included__title {
+.included-services__title {
   text-align: center;
   font-size: clamp(24px, 5vw, 32px);
   margin-bottom: 40px;
   color: #2c3e50;
 }
 
-.advantages-included__list {
+.included-services__list {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
@@ -889,7 +889,7 @@ h6 {
   gap: 20px;
 }
 
-.advantage-included__text {
+.included-services__text {
   font-size: clamp(14px, 5vw, 20px);
   padding: 12px 0;
   position: relative;
@@ -897,7 +897,7 @@ h6 {
   word-break: break-word;
 }
 
-.advantage-included__text::before {
+.included-services__text::before {
   content: "✓";
   position: absolute;
   left: 0;
@@ -1307,6 +1307,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
