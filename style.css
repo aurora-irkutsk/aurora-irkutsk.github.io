@@ -1210,7 +1210,7 @@ h6 {
 
   /* Сетки — 1 колонка */
   .services__list,
-  .advantages__list,
+  .advantages-cards__list,
   .reviews__list {
     grid-template-columns: 1fr !important;
     gap: 25px;
@@ -1307,6 +1307,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
