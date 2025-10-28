@@ -886,14 +886,14 @@ h6 {
   list-style: none;
 }
 
-.advantage {
+.advantage__text {
   font-size: clamp(16px, 5vw, 20px);
   padding: 12px 0;
   position: relative;
   padding-left: 30px;
 }
 
-.advantage::before {
+.advantage__text::before {
   content: "✓";
   position: absolute;
   left: 0;
@@ -1303,6 +1303,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
