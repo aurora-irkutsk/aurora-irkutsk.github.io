@@ -851,7 +851,7 @@ h6 {
 }
 
 .about__text {
-  font-size: 18px;
+  font-size: clamp(16px, 5vw, 20px);
   line-height: 1.7;
   margin-bottom: 20px;
   max-width: 800px;
@@ -887,7 +887,7 @@ h6 {
 }
 
 .advantage {
-  font-size: 18px;
+  font-size: clamp(16px, 5vw, 20px);
   padding: 12px 0;
   position: relative;
   padding-left: 30px;
@@ -1303,6 +1303,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
