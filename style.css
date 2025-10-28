@@ -866,145 +866,34 @@ h6 {
   line-height: 1.7;
 }
 
-/* Преимущества sofa */
-.sofa-advantages {
+/* Преимущества */
+.advantages {
   padding: 80px 0;
   background: white;
 }
 
-.sofa-advantages__title {
+.advantages__title {
   text-align: center;
-  font-size: 36px;
+  font-size: clamp(22px, 5vw, 32px);
   margin-bottom: 40px;
   color: #2c3e50;
 }
 
-.sofa-advantages__list {
+.advantages__list {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
   list-style: none;
 }
 
-.sofa-advantage {
+.advantage {
   font-size: 18px;
   padding: 12px 0;
   position: relative;
   padding-left: 30px;
 }
 
-.sofa-advantage::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: orange;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* Преимущества chair */
-.chair-advantages {
-  padding: 80px 0;
-  background: white;
-}
-
-.chair-advantages__title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #2c3e50;
-}
-
-.chair-advantages__list {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-  list-style: none;
-}
-
-.chair-advantage {
-  font-size: 18px;
-  padding: 12px 0;
-  position: relative;
-  padding-left: 30px;
-}
-
-.chair-advantage::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: orange;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* Преимущества armchair */
-.armchair-advantages {
-  padding: 80px 0;
-  background: white;
-}
-
-.armchair-advantages__title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #2c3e50;
-}
-
-.armchair-advantages__list {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-  list-style: none;
-}
-
-.armchair-advantage {
-  font-size: 18px;
-  padding: 12px 0;
-  position: relative;
-  padding-left: 30px;
-}
-
-.armchair-advantage::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: orange;
-  font-weight: bold;
-  font-size: 18px;
-}
-
-/* Преимущества leather */
-.leather-advantages {
-  padding: 80px 0;
-  background: white;
-}
-
-.leather-advantages__title {
-  text-align: center;
-  font-size: 36px;
-  margin-bottom: 40px;
-  color: #2c3e50;
-}
-
-.leather-advantages__list {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-  list-style: none;
-}
-
-.leather-advantage {
-  font-size: 18px;
-  padding: 12px 0;
-  position: relative;
-  padding-left: 30px;
-}
-
-.leather-advantage::before {
+.advantage::before {
   content: "✓";
   position: absolute;
   left: 0;
@@ -1414,6 +1303,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
