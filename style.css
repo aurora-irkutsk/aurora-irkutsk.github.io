@@ -874,7 +874,7 @@ h6 {
 
 .advantages-included__title {
   text-align: center;
-  font-size: 32px;
+  font-size: clamp(24px, 5vw, 32px);
   margin-bottom: 40px;
   color: #2c3e50;
 }
@@ -890,7 +890,7 @@ h6 {
 }
 
 .advantage-included__text {
-  font-size: 18px;
+  font-size: clamp(14px, 5vw, 20px);
   padding: 12px 0;
   position: relative;
   padding-left: 30px;
@@ -1191,14 +1191,14 @@ h6 {
   }
 
   .hero__title {
-    font-size: clamp(24px, 5vw, 36px);
+    font-size: clamp(24px, 5vw, 32px);
     line-height: 1.4;
     margin-top: 30px; /* опускаем на 30px */
     margin-bottom: 20px;
   }
 
   .hero__text {
-    font-size: 18px;
+    font-size: clamp(14px, 5vw, 20px);
     max-width: none;
   }
 
@@ -1307,5 +1307,6 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
