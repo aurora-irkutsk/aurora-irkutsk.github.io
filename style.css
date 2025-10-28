@@ -1227,7 +1227,7 @@ h6 {
 
   /* Заголовки секций */
   .services__title,
-  .advantages__title,
+  .advantages-cards__title,
   .steps__title,
   .portfolio__title,
   .reviews__title,
@@ -1307,6 +1307,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
