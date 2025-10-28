@@ -889,7 +889,7 @@ h6 {
   gap: 20px;
 }
 
-.included-services__text {
+.included-services__item {
   font-size: clamp(14px, 5vw, 20px);
   padding: 12px 0;
   position: relative;
@@ -897,7 +897,7 @@ h6 {
   word-break: break-word;
 }
 
-.included-services__text::before {
+.included-services__item::before {
   content: "✓";
   position: absolute;
   left: 0;
@@ -1307,6 +1307,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
