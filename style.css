@@ -31,6 +31,16 @@ h6 {
 }
 
 /* Шапка */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* чтобы шапка была поверх всего */
+  background-color: #333; /* фон, чтобы не просвечивал контент */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* опционально: тень для выделения */
+}
+
 .header__inner {
   display: flex;
   justify-content: space-between;
@@ -1159,7 +1169,13 @@ h6 {
 @media (max-width: 768px) {
   /* Шапка */
   .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* чтобы шапка была поверх всего */
     padding: 10px 15px; /* Уменьшаем отступы */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* опционально: тень для выделения */
     height: auto; /* Убираем фиксированную высоту */
     background-color: #333;
     display: flex;
@@ -1319,6 +1335,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
