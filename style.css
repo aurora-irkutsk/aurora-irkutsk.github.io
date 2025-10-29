@@ -1240,11 +1240,22 @@ h6 {
   /* Контакты */
   .contacts__wrapper {
     flex-direction: column;
+    align-items: center; /* центрирует содержимое */
     gap: 30px;
   }
 
+  .contacts__map {
+    width: 100%; /* растягиваем на всю ширину */
+    max-width: none; /* убираем ограничение */
+    display: flex;
+    justify-content: center;
+  }
+
   .contacts__map iframe {
-    height: 220px;
+    width: 100% !important;   /* гарантирует 100% ширины */
+    height: 280px !important; /* фиксируем высоту для мобилок */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   }
 
   /* Форма заявки */
@@ -1308,6 +1319,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
