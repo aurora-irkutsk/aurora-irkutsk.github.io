@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ваш-сайт.ru/sitemap.xml
+Sitemap: https://https://peretyazhka-aurora.ru/sitemap.xml
 
 # Запрещаем только потенциально опасные или служебные пути
 Disallow: /admin/
@@ -11,3 +11,4 @@ Disallow: /backup/
 Disallow: /*?
 
 Disallow: /404/
+
