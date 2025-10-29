@@ -8,4 +8,6 @@ Disallow: /admin/
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /backup/
+Disallow: /*?
+
 Disallow: /404/
