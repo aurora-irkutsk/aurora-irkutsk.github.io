@@ -12,7 +12,7 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
-  padding-top: 80px; /* высота шапки + запас */
+  padding-top: 100px; /* высота шапки + запас */
   color: #333;
 }
 
@@ -1170,7 +1170,7 @@ h6 {
 @media (max-width: 768px) {
   /* Шапка */
    body {
-    padding-top: 70px; /* чуть меньше, если на мобилке шапка компактнее */
+    padding-top: 50px; /* чуть меньше, если на мобилке шапка компактнее */
   }
   
   .header {
@@ -1340,6 +1340,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
