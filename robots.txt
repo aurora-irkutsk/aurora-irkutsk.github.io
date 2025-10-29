@@ -12,3 +12,5 @@ Disallow: /*?
 
 Disallow: /404/
 
+# Указываем карту сайта
+Sitemap: https://peretyazhka-aurora.ru/sitemap.xml
