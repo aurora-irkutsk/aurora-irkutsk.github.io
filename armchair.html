@@ -23,12 +23,15 @@
 
   <!-- Schema.org -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Перетяжка кресел",
+  "provider": {
     "@type": "ProfessionalService",
     "name": "Aurora — перетяжка мебели",
-    "image": "https://peretyazhka-aurora.ru/images/logo/logo.png",
-    "url": "https://peretyazhka-aurora.ru/",
+    "image": "https://peretyazhka-aurora.ru/images/logo/logo-img.webp",
+    "url": "https://peretyazhka-aurora.ru/armchair.html",
     "telephone": "+79025605225",
     "address": {
       "@type": "PostalAddress",
@@ -43,17 +46,22 @@
       "latitude": 52.2863,
       "longitude": 104.2842
     },
-    "serviceArea": "Иркутск и Иркутская область",
-    "description": "Перетяжка диванов в Иркутске — профессионально, с гарантией, с 2008 года.",
-    "offers": {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Перетяжка мебели"
-      }
+    "areaServed": "Иркутск и Иркутская область",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "22:00"
     }
+  },
+  "description": "Профессиональная перетяжка кресел в Иркутске: от классических и кожаных до дизайнерских и антикварных моделей. Замена обивки, наполнителя, ремонт каркаса. Бесплатный выезд мастера и гарантия до 2 лет.",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "RUB",
+    "url": "https://peretyazhka-aurora.ru/armchair.html"
   }
-  </script>
+}
+</script>
 
   <!-- Шрифты -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -506,6 +514,7 @@
     </div>
   </body>
 </html>
+
 
 
 
