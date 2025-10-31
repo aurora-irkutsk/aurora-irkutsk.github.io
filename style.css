@@ -676,7 +676,6 @@ h6 {
   font-size: 16px;
   color: #444;
   line-height: 1.6;
-  font-style: italic;
   flex-grow: 1;
   text-align: center;
 }
@@ -1340,6 +1339,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
