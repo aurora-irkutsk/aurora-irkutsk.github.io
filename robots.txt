@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://https://peretyazhka-aurora.ru/sitemap.xml
+# Указываем карту сайта
+Sitemap: https://peretyazhka-aurora.ru/sitemap.xml
 
 # Запрещаем только потенциально опасные или служебные пути
 Disallow: /admin/
@@ -9,6 +10,3 @@ Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /backup/
 Disallow: /*?
-
-# Указываем карту сайта
-Sitemap: https://peretyazhka-aurora.ru/sitemap.xml
