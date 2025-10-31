@@ -1,3 +1,14 @@
+# Запрет доступа к .htaccess
+<Files ".htaccess">
+  Require all denied
+</Files>
+
+# Включить сжатие (gzip)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml text/javascript application/javascript application/json application/xml
+</IfModule>
+
+# Кэширование статических ресурсов (1 год)
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
@@ -10,7 +21,7 @@
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
 
-  # CSS и JS
+  # CSS и JavaScript
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType application/x-javascript "access plus 1 year"
@@ -22,8 +33,34 @@
   ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 
+# Установка заголовков Cache-Control с immutable
 <IfModule mod_headers.c>
   <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|css|js|woff|woff2|ttf|otf)$">
     Header set Cache-Control "max-age=31536000, public, immutable"
   </FilesMatch>
 </IfModule>
+
+# Поддержка WebP: отдавать .webp вместо .jpg/.png, если браузер поддерживает
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Перенаправление для index.html (если используется)
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # WebP fallback
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+  RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,L]
+
+  # Добавить правильный Content-Type для .webp
+  <FilesMatch "\.webp$">
+    Header set Content-Type "image/webp"
+  </FilesMatch>
+</IfModule>
+
+# Удалить ETag (уменьшает заголовки)
+FileETag None
+
+# Запретить индексацию папок
+Options -Indexes
