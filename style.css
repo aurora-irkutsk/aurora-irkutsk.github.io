@@ -23,7 +23,8 @@ services
 works {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3; 
+  aspect-ratio: 4 / 3;
+  loading="lazy"
 }
 
 .mobile-menu,
@@ -1350,6 +1351,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
