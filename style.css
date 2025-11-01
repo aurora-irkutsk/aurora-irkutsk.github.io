@@ -130,7 +130,7 @@ h6 {
 
 /* Общие стили для всех hero-секций */
 .hero {
-  background: url("/images/hero/hero-bg.webp") center / cover no-repeat;
+  background: url("/images/hero/hero-bg-desktop.webp") center / cover no-repeat;
   min-height: 100vh;
   display: flex;
   align-items: flex-start;
@@ -1341,3 +1341,4 @@ h6 {
     gap: 30px;
   }
 }
+
