@@ -31,6 +31,36 @@ h6 {
   cursor: default;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Montserrat-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Montserrat-Bold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Montserrat-Blac.woff2') format('woff2');
+}
+
+
 /* Шапка */
 .header {
   position: fixed;
@@ -1339,6 +1369,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
