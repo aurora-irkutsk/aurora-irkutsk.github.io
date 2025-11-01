@@ -14,13 +14,10 @@
   ExpiresDefault "access plus 1 month"
 
   # Изображения
-  ExpiresByType images/jpg "access plus 1 year"
-  ExpiresByType images/jpeg "access plus 1 year"
-  ExpiresByType images/gif "access plus 1 year"
-  ExpiresByType images/png "access plus 1 year"
-  ExpiresByType images/webp "access plus 1 year"
-  ExpiresByType images/svg+xml "access plus 1 year"
-
+  ExpiresByType images/hero/hero-bg-desktop.webp "access plus 1 year"
+  ExpiresByType images/hero/hero-bg-mobile.webp "access plus 1 year"
+  
+  
   # CSS и JavaScript
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
