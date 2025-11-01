@@ -148,7 +148,7 @@ h6 {
 
 .hero__title {
   font-size: 60px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.2;
   max-width: 1000px;
   margin-bottom: 30px;
@@ -1341,6 +1341,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
