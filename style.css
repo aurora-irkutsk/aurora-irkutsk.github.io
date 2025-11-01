@@ -10,10 +10,7 @@ html {
 }
 
 body {
-  font-family: 'Montserrat';
-  font-weight: 900;
-  font-display: swap;
-  src: url('/fonts/Montserrat-Black.woff2') format('woff2');
+  font-family: "Montserrat";
   margin: 0;
   padding-top: 90px; /* высота шапки + запас */
   color: #333;
@@ -1342,6 +1339,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
