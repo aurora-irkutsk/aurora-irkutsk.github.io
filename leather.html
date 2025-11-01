@@ -8,12 +8,6 @@
     <link
       rel="preload"
       as="image"
-      href="/images/hero/hero-bg-mobile.webp"
-      media="(max-width: 767px)"
-    />
-    <link
-      rel="preload"
-      as="image"
       href="/images/hero/hero-bg-desktop.webp"
       media="(min-width: 768px)"
     />
@@ -112,7 +106,7 @@
     />
 
     <!-- Стили и скрипты -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'" />
     <script src="main.js" defer></script>
   </head>
   <body>
@@ -661,6 +655,7 @@
     </noscript>
   </body>
 </html>
+
 
 
 
