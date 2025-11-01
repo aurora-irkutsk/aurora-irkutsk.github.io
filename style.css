@@ -60,7 +60,6 @@ h6 {
   src: url('/fonts/Montserrat-Blac.woff2') format('woff2');
 }
 
-
 /* Шапка */
 .header {
   position: fixed;
@@ -1369,6 +1368,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
