@@ -1,115 +1,86 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Предзагрузка -->
-    <link
-      rel="preload"
-      as="image"
-      href="/images/hero/hero-bg-desktop.webp"
-      media="(min-width: 768px)"
-    />
+  <!-- Заголовок и описание (основные SEO-метатеги) -->
+  <title>Перетяжка мебели в Иркутске — Aurora | Бесплатный выезд мастера</title>
+  <meta name="description" content="Профессиональная перетяжка и ремонт мягкой мебели в Иркутске. Звоните: +7 902 560-52-25. Адрес: р.п. Марково, микрорайон Берёзовый, дом 216." />
 
-    <title>
-      Перетяжка мебели в Иркутске — Aurora | Бесплатный выезд мастера
-    </title>
-    <meta
-      name="description"
-      content="Профессиональная перетяжка и ремонт мягкой мебели в Иркутске. Звоните: +7 902 560-52-25. Адрес: р.п. Марково, микрорайон Берёзовый, дом 216."
-    />
+  <!-- Open Graph (для соцсетей) -->
+  <meta property="og:title" content="Перетяжка мебели в Иркутске — Aurora" />
+  <meta property="og:description" content="Бесплатный выезд мастера, перетяжка диванов, кресел и стульев с 2008 года. Гарантия до 2 лет." />
+  <meta property="og:image" content="https://peretyazhka-aurora.ru/images/services/sofa.webp" />
+  <meta property="og:url" content="https://peretyazhka-aurora.ru/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Перетяжка мебели в Иркутске — Aurora" />
-    <meta
-      property="og:description"
-      content="Бесплатный выезд мастера, перетяжка диванов, кресел и стульев с 2008 года. Гарантия до 2 лет."
-    />
-    <meta
-      property="og:image"
-      content="https://peretyazhka-aurora.ru/images/services/sofa.webp"
-    />
-    <meta property="og:url" content="https://peretyazhka-aurora.ru/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="ru_RU" />
+  <!-- Фавикон и PWA -->
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/images/site.webmanifest" />
 
-    <!-- Фавикон -->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/images/favicon-96x96.png"
-    />
-    <link rel="manifest" href="/images/site.webmanifest" />
+  <!-- Preconnect для внешних доменов (ускоряет загрузку шрифтов и аналитики) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- (опционально: preconnect для Яндекс.Метрики и GTM, если они подключаются в <body>) -->
 
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Aurora — перетяжка мебели",
-        "image": "https://peretyazhka-aurora.ru/images/logo/logo.png",
-        "url": "https://peretyazhka-aurora.ru/",
-        "telephone": "+79025605225",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "микрорайон Берёзовый, д. 216",
-          "addressLocality": "р.п. Марково",
-          "addressRegion": "Иркутская область",
-          "postalCode": "664000",
-          "addressCountry": "RU"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 52.2863,
-          "longitude": 104.2842
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        "serviceArea": "Иркутск и Иркутская область",
-        "description": "Профессиональная перетяжка и ремонт мягкой мебели в Иркутске с 2008 года: диваны, кресла, стулья, кожаная мебель. Бесплатный выезд мастера, гарантия до 2 лет.",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "RUB",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Перетяжка мебели",
-            "serviceType": "Перетяжка мягкой мебели"
-          }
-        }
+  <!-- Предзагрузка критичных ресурсов -->
+  <link rel="preload" as="image" href="/images/hero/hero-bg-desktop.webp" media="(min-width: 768px)" />
+
+  <!-- Шрифты (после preconnect) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Aurora — перетяжка мебели",
+    "image": "https://peretyazhka-aurora.ru/images/logo/logo.png",
+    "url": "https://peretyazhka-aurora.ru/",
+    "telephone": "+79025605225",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "микрорайон Берёзовый, д. 216",
+      "addressLocality": "р.п. Марково",
+      "addressRegion": "Иркутская область",
+      "postalCode": "664000",
+      "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.2863,
+      "longitude": 104.2842
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "serviceArea": "Иркутск и Иркутская область",
+    "description": "Профессиональная перетяжка и ремонт мягкой мебели в Иркутске с 2008 года: диваны, кресла, стулья, кожаная мебель. Бесплатный выезд мастера, гарантия до 2 лет.",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "RUB",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Перетяжка мебели",
+        "serviceType": "Перетяжка мягкой мебели"
       }
-    </script>
+    }
+  }
+  </script>
 
-    <!-- Шрифты -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Стили -->
+  <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'" />
 
-    <!-- Стили и скрипты -->
-    <link
-      rel="stylesheet"
-      href="/style.css"
-      media="print"
-      onload="this.media='all'"
-    />
-    <script src="main.js" defer></script>
-
-  </head>
-
+  <!-- Скрипты (в <head> с defer — допустимо и безопасно) -->
+  <script src="main.js" defer></script>
+</head>
   <body>
     <!-- Шапка сайта -->
     <header class="header">
@@ -924,4 +895,5 @@
     </noscript>
   </body>
 </html>
+
 
