@@ -14,7 +14,7 @@ body {
   font-weight: 400;
   font-display: swap;
   src: url('/fonts/Montserrat-Regular.woff2') format('woff2');
-   margin: 0;
+  margin: 0;
   padding-top: 90px; /* высота шапки + запас */
   color: #333;
 }
@@ -1342,6 +1342,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
