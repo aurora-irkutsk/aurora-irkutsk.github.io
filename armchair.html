@@ -1,110 +1,85 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Предзагрузка -->
-    <link rel="preload" as="image" href="/images/hero/hero-bg-desktop.webp" media="(min-width: 768px)">
-    <!-- Стили и скрипты -->
-    <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'" />
+  <!-- Заголовок и описание (основные SEO-метатеги) -->
+  <title>Перетяжка кресел в Иркутске — Aurora | Классические и дизайнерские модели</title>
+  <meta name="description" content="Вернём эстетику и комфорт вашим креслам! Перетяжка кресел в Иркутске — от классики до дизайнерских моделей. Замена обивки, наполнителя, ремонт каркаса. Бесплатная консультация и выезд мастера." />
 
-    <title>
-      Перетяжка кресел в Иркутске — Aurora | Классические и дизайнерские модели
-    </title>
-    <meta
-      name="description"
-      content="Вернём эстетику и комфорт вашим креслам! Перетяжка кресел в Иркутске — от классики до дизайнерских моделей. Замена обивки, наполнителя, ремонт каркаса. Бесплатная консультация и выезд мастера."
-    />
+  <!-- Open Graph (для соцсетей) -->
+  <meta property="og:title" content="Перетяжка мебели в Иркутске — Aurora" />
+  <meta property="og:description" content="Бесплатный выезд мастера, перетяжка диванов, кресел и стульев с 2008 года. Гарантия до 2 лет." />
+  <meta property="og:image" content="https://peretyazhka-aurora.ru/images/services/armchair.webp" />
+  <meta property="og:url" content="https://peretyazhka-aurora.ru/armchair.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ru_RU" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Перетяжка мебели в Иркутске — Aurora" />
-    <meta
-      property="og:description"
-      content="Бесплатный выезд мастера, перетяжка диванов, кресел и стульев с 2008 года. Гарантия до 2 лет."
-    />
-    <meta
-      property="og:image"
-      content="https://peretyazhka-aurora.ru/images/services/sofa.webp"
-    />
-    <meta property="og:url" content="https://peretyazhka-aurora.ru/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="ru_RU" />
+  <!-- Фавикон и PWA -->
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="manifest" href="/images/site.webmanifest" />
 
-    <!-- Фавикон -->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/images/favicon-96x96.png"
-    />
-    <link rel="manifest" href="/images/site.webmanifest" />
+  <!-- Preconnect для внешних доменов -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Schema.org -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Перетяжка кресел",
-        "provider": {
-          "@type": "ProfessionalService",
-          "name": "Aurora — перетяжка мебели",
-          "image": "https://peretyazhka-aurora.ru/images/services/armchair.webp",
-          "url": "https://peretyazhka-aurora.ru/armchair.html",
-          "telephone": "+79025605225",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "микрорайон Берёзовый, д. 216",
-            "addressLocality": "р.п. Марково",
-            "addressRegion": "Иркутская область",
-            "postalCode": "664000",
-            "addressCountry": "RU"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 52.2863,
-            "longitude": 104.2842
-          },
-          "areaServed": "Иркутск и Иркутская область",
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday"
-            ],
-            "opens": "09:00",
-            "closes": "18:00"
-          }
-        },
-        "description": "Профессиональная перетяжка кресел в Иркутске: от классических и кожаных до дизайнерских и антикварных моделей. Замена обивки, наполнителя, ремонт каркаса. Бесплатный выезд мастера и гарантия до 2 лет.",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "RUB",
-          "url": "https://peretyazhka-aurora.ru/armchair.html"
-        }
+  <!-- Предзагрузка критичных ресурсов -->
+  <link rel="preload" as="image" href="/images/hero/hero-bg-desktop.webp" media="(min-width: 768px)" />
+
+  <!-- Шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Перетяжка кресел",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Aurora — перетяжка мебели",
+      "image": "https://peretyazhka-aurora.ru/images/services/armchair.webp",
+      "url": "https://peretyazhka-aurora.ru/armchair.html",
+      "telephone": "+79025605225",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "микрорайон Берёзовый, д. 216",
+        "addressLocality": "р.п. Марково",
+        "addressRegion": "Иркутская область",
+        "postalCode": "664000",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.2863,
+        "longitude": 104.2842
+      },
+      "areaServed": "Иркутск и Иркутская область",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
       }
-    </script>
+    },
+    "description": "Профессиональная перетяжка кресел в Иркутске: от классических и кожаных до дизайнерских и антикварных моделей. Замена обивки, наполнителя, ремонт каркаса. Бесплатный выезд мастера и гарантия до 2 лет.",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "RUB",
+      "url": "https://peretyazhka-aurora.ru/armchair.html"
+    }
+  }
+  </script>
 
-    <!-- Шрифты -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Стили -->
+  <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'" />
 
-    <!-- Стили и скрипты -->
-    <script src="main.js" defer></script>
-  </head>
+  <!-- Скрипты -->
+  <script src="main.js" defer></script>
+</head>
 
   <body>
     <header class="header" id="header">
@@ -589,6 +564,7 @@
     </noscript>
   </body>
 </html>
+
 
 
 
