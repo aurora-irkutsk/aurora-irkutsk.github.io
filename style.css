@@ -16,6 +16,12 @@ body {
   color: #333;
 }
 
+images{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; 
+}
+
 .mobile-menu,
 .burger {
   display: none;
@@ -1340,6 +1346,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
