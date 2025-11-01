@@ -15,6 +15,10 @@ body {
   padding-top: 90px; /* высота шапки + запас */
   color: #333;
 }
+images {
+  width: 100%;
+  height: auto;
+}
 
 .mobile-menu,
 .burger {
@@ -1340,6 +1344,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
