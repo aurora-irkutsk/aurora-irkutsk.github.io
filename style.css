@@ -171,7 +171,7 @@ h6 {
 }
 
 .hero__title {
-  font-size: clamp(50px, 5vw, 60px);
+  font-size: clamp(3.125rem, 5vw, 3.75rem);
   font-weight: 700;
   line-height: 1.2;
   max-width: 1000px;
@@ -1315,6 +1315,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
