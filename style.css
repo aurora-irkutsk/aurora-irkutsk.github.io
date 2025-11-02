@@ -31,7 +31,6 @@ h6 {
   display: none;
 }
 
-/* Montserrat — Regular */
 @font-face {
   font-family: 'Montserrat';
   font-weight: 400;
@@ -40,7 +39,6 @@ h6 {
   font-display: swap;
 }
 
-/* Montserrat — Medium */
 @font-face {
   font-family: 'Montserrat';
   font-weight: 500;
@@ -49,7 +47,6 @@ h6 {
   font-display: swap;
 }
 
-/* Montserrat — SemiBold */
 @font-face {
   font-family: 'Montserrat';
   font-weight: 600;
@@ -58,7 +55,6 @@ h6 {
   font-display: swap;
 }
 
-/* Montserrat — Bold */
 @font-face {
   font-family: 'Montserrat';
   font-weight: 700;
@@ -1319,5 +1315,3 @@ h6 {
     gap: 30px;
   }
 }
-
-
