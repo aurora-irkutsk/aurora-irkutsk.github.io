@@ -106,8 +106,8 @@ h6 {
 .header__button,
 .hero__button,
 .request__button {
-  outline: 2px solid orange;
-  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.5);
 }
 
 .header__button {
@@ -1290,3 +1290,4 @@ h6 {
     gap: 30px;
   }
 }
+
