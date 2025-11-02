@@ -171,169 +171,81 @@
 </section>
       <!-- Форма заявки -->
       <section class="request" id="request">
-        <div class="request__bg"></div>
-        <div class="container">
-          <div class="request__content">
-            <h2 class="request__title">
-              Хотите обновить мебель быстро и недорого?
-            </h2>
-            <p class="request__text">
-              Заполните форму – перезвоним в течение 30 минут, назовем сроки и
-              точную цену!
-            </p>
-            <form
-              class="request__form"
-              id="requestForm"
-              action="https://formspree.io/f/xvgvojvw"
-              method="POST"
-            >
-              <input
-                type="text"
-                name="name"
-                class="request__input"
-                placeholder="Введите ваше имя *"
-                required
-              />
-              <input
-                type="tel"
-                name="phone"
-                class="request__input"
-                placeholder="Введите ваш номер телефона *"
-                required
-              />
-              <button type="submit" class="request__button">Отправить</button>
-              <p class="request__agreement">
-                Отправляя данные с любой формы сайта, Вы соглашаетесь на
-                обработку данных, согласно ФЗ 152 в соответствие с политикой
-                конфиденциальности.
-              </p>
-            </form>
-          </div>
-        </div>
-      </section>
-
+  <div class="request__bg"></div>
+  <div class="container">
+    <div class="request__content">
+      <h2 class="request__title">Хотите обновить мебель быстро и недорого?</h2>
+      <p class="request__text">Заполните форму – перезвоним в течение 30 минут, назовем сроки и точную цену!</p>
+      <form class="request__form" id="requestForm" action="https://formspree.io/f/xvgvojvw" method="POST">
+        <input type="text" name="name" class="request__input" placeholder="Введите ваше имя *" required />
+        <input type="tel" name="phone" class="request__input" placeholder="Введите ваш номер телефона *" required />
+        <button type="submit" class="request__button">Отправить</button>
+        <p class="request__agreement">Отправляя данные с любой формы сайта, Вы соглашаетесь на обработку данных, согласно ФЗ 152 в соответствие с политикой конфиденциальности.</p>
+      </form>
+    </div>
+  </div>
+</section>
       <!-- Модальное окно -->
       <div class="modal" id="imageModal">
-        <span class="modal__close">&times;</span>
-        <button
-          class="modal__arrow modal__arrow--prev"
-          id="prevBtn"
-          type="button"
-        >
-          &#10094;
-        </button>
-        <img
-          class="modal__img"
-          id="modalImage"
-          src=""
-          alt="Кнопка позвоните мне"
-        />
-        <div class="modal__caption" id="modalCaption"></div>
-        <button
-          class="modal__arrow modal__arrow--next"
-          id="nextBtn"
-          type="button"
-        >
-          &#10095;
-        </button>
-        <div class="modal__counter" id="imageCounter">1 / 10</div>
-      </div>
-
+  <span class="modal__close">&times;</span>
+  <button class="modal__arrow modal__arrow--prev" id="prevBtn" type="button">&#10094;</button>
+  <img class="modal__img" id="modalImage" src="" alt="Кнопка позвоните мне" />
+  <div class="modal__caption" id="modalCaption"></div>
+  <button class="modal__arrow modal__arrow--next" id="nextBtn" type="button">&#10095;</button>
+  <div class="modal__counter" id="imageCounter">1 / 10</div>
+</div>
       <!-- Блок Контакты -->
       <section class="contacts" id="contacts">
-        <div class="container">
-          <h2 class="contacts__title">Наши контакты</h2>
-          <div class="contacts__wrapper">
-            <div class="contacts__info">
-              <p class="contacts__subtitle">Консультации и выезд мастера:</p>
-              <p class="contacts__schedule">Пн — Пт с 8:00 до 22:00</p>
-              <p class="contacts__address">
-                <strong>Адрес:</strong> р.п. Марково микрорайон Березовый дом
-                216
-              </p>
-              <p class="contacts__phone">
-                <strong>Телефон:</strong>
-                <a href="tel:+79025605225">+7 902 560-52-25</a>
-              </p>
-              <p class="contacts__messenger">
-                <strong>WhatsApp:</strong>
-                <a href="https://wa.me/79025605225">+7 902 560-52-25</a>
-              </p>
-              <p class="contacts__email">
-                <strong>Почта:</strong>
-                <a href="mailto:aurora-38@yandex.ru">aurora-38@yandex.ru</a>
-              </p>
-            </div>
-            <div class="contacts__map">
-              <iframe
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab3ccd0f592f488e287da048e2e9cd52c6807140320e892759e69cb73cf5d553a&amp;source=constructor"
-                width="100%"
-                height="250"
-                frameborder="0"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__content">
-          <!-- Навигация -->
-          <nav class="footer__nav">
-            <a href="/" class="footer__link">Главная</a>
-            <a href="sofa.html" class="footer__link">Перетяжка диванов</a>
-            <a href="armchair.html" class="footer__link">Перетяжка кресел</a>
-            <a href="chair.html" class="footer__link">Перетяжка стульев</a>
-            <a href="leather.html" class="footer__link">Кожаная мебель</a>
-            <a href="#portfolio" class="footer__link">Наши работы</a>
-            <a href="#contacts" class="footer__link">Контакты</a>
-          </nav>
-        </div>
-        <div class="footer__bottom">
-          <p class="footer__copyright">
-            &copy; 2025 Aurora. Перетяжка мебели в Иркутске.
-          </p>
-        </div>
+  <div class="container">
+    <h2 class="contacts__title">Наши контакты</h2>
+    <div class="contacts__wrapper">
+      <div class="contacts__info">
+        <p class="contacts__subtitle">Консультации и выезд мастера:</p>
+        <p class="contacts__schedule">Пн — Пт с 8:00 до 22:00</p>
+        <p class="contacts__address"><strong>Адрес:</strong> р.п. Марково микрорайон Березовый дом 216</p>
+        <p class="contacts__phone"><strong>Телефон:</strong> <a href="tel:+79025605225">+7 902 560-52-25</a></p>
+        <p class="contacts__messenger"><strong>WhatsApp:</strong> <a href="https://wa.me/79025605225">+7 902 560-52-25</a></p>
+        <p class="contacts__email"><strong>Почта:</strong> <a href="mailto:aurora-38@yandex.ru">aurora-38@yandex.ru</a></p>
       </div>
-    </footer>
-    <!-- Попап (внизу body, один раз на странице) -->
-    <div class="modal" id="callModal">
-      <div class="modal__content">
-        <span class="modal__close" id="closeCallModal">&times;</span>
-        <h3 class="modal__title">Вызвать мастера</h3>
-        <p class="modal__text">
-          Оставьте свой номер телефона — перезвоним в течение 30 минут назовем
-          сроки и стоимость
-        </p>
-        <form
-          class="modal__form"
-          id="callForm"
-          action="https://formspree.io/f/xvgvojvw"
-          method="POST"
-        >
-          <input
-            type="text"
-            name="name"
-            class="modal__input"
-            placeholder="Введите ваше имя *"
-            required
-          />
-          <input
-            type="tel"
-            name="phone"
-            class="modal__input"
-            placeholder="Введите ваш номер телефона *"
-            required
-          />
-          <button type="submit" class="modal__button">Позвоните мне</button>
-          <p class="modal__agreement">
-            Нажимая на кнопку «Позвоните мне», вы соглашаетесь на обработку
-            персональных данных
-          </p>
-        </form>
+      <div class="contacts__map">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab3ccd0f592f488e287da048e2e9cd52c6807140320e892759e69cb73cf5d553a&amp;source=constructor" width="100%" height="250" frameborder="0"></iframe>
       </div>
     </div>
+  </div>
+</section>
+    </main>
+    <footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <nav class="footer__nav">
+        <a href="/" class="footer__link">Главная</a>
+        <a href="sofa.html" class="footer__link">Перетяжка диванов</a>
+        <a href="armchair.html" class="footer__link">Перетяжка кресел</a>
+        <a href="chair.html" class="footer__link">Перетяжка стульев</a>
+        <a href="leather.html" class="footer__link">Кожаная мебель</a>
+        <a href="#portfolio" class="footer__link">Наши работы</a>
+        <a href="#contacts" class="footer__link">Контакты</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; 2025 Aurora. Перетяжка мебели в Иркутске.</p>
+    </div>
+  </div>
+</footer>
+    <!-- Попап (внизу body, один раз на странице) -->
+    <div class="modal" id="callModal">
+  <div class="modal__content">
+    <span class="modal__close" id="closeCallModal">&times;</span>
+    <h3 class="modal__title">Вызвать мастера</h3>
+    <p class="modal__text">Оставьте свой номер телефона — перезвоним в течение 30 минут назовем сроки и стоимость</p>
+    <form class="modal__form" id="callForm" action="https://formspree.io/f/xvgvojvw" method="POST">
+      <input type="text" name="name" class="modal__input" placeholder="Введите ваше имя *" required />
+      <input type="tel" name="phone" class="modal__input" placeholder="Введите ваш номер телефона *" required />
+      <button type="submit" class="modal__button">Позвоните мне</button>
+      <p class="modal__agreement">Нажимая на кнопку «Позвоните мне», вы соглашаетесь на обработку персональных данных</p>
+    </form>
+  </div>
+</div>
     <!-- Google Analytics -->
     <script
       async
@@ -387,6 +299,7 @@
     </noscript>
   </body>
 </html>
+
 
 
 
