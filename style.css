@@ -31,6 +31,42 @@ h6 {
   display: none;
 }
 
+/* Montserrat — Regular */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-style: normal;
+  src: url('/fonts/montserrat-regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Montserrat — Medium */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  src: url('/fonts/montserrat-medium.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Montserrat — SemiBold */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-style: normal;
+  src: url('/fonts/montserrat-semibold.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Montserrat — Bold */
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/fonts/montserrat-bold.woff2') format('woff2');
+  font-display: swap;
+}
+
 /* Шапка */
 .header {
   position: fixed;
@@ -1283,3 +1319,4 @@ h6 {
     gap: 30px;
   }
 }
+
