@@ -184,6 +184,7 @@ h6 {
   margin-bottom: 30px;
   line-height: 1.6;
   max-width: 800px;
+  color: white;
 }
 
 .hero__button {
@@ -1315,6 +1316,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
