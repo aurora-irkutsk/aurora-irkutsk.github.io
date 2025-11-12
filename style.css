@@ -1218,8 +1218,8 @@ h6 {
   }
 
   .phone-number {
-  color: white;
-  font-weight: 500;
+    color: white;
+    font-weight: 500;
   }
 
   .hero__button {
@@ -1325,5 +1325,6 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
