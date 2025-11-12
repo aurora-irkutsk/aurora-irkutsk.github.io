@@ -186,17 +186,6 @@ h6 {
   max-width: 800px;
 }
 
-.phone-link {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.phone-link:hover {
-  color: orange;
-  transition: color 0.2s ease;
-}
-
 .hero__button {
   display: inline-block;
   background: transparent;
@@ -1223,17 +1212,6 @@ h6 {
     max-width: none;
   }
 
-  .phone-link {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .phone-link:hover {
-    color: orange;
-    transition: color 0.2s ease;
-  }
-
   .hero__button {
     padding: 12px 24px;
     font-size: 16px;
@@ -1337,6 +1315,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
