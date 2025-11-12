@@ -184,7 +184,11 @@ h6 {
   margin-bottom: 30px;
   line-height: 1.6;
   max-width: 800px;
-  color: whitesmoke;
+}
+
+.phone-number {
+  color: white;
+  font-weight: 500;
 }
 
 .hero__button {
@@ -1316,3 +1320,4 @@ h6 {
     gap: 30px;
   }
 }
+
