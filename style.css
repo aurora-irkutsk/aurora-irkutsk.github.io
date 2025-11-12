@@ -186,9 +186,15 @@ h6 {
   max-width: 800px;
 }
 
-.phone-number {
+.phone-link {
   color: white;
-  font-weight: 600;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.phone-link:hover {
+  color: orange;
+  transition: color 0.2s ease;
 }
 
 .hero__button {
@@ -1217,11 +1223,6 @@ h6 {
     max-width: none;
   }
 
-  .phone-number {
-    color: white;
-    font-weight: 600;
-  }
-
   .hero__button {
     padding: 12px 24px;
     font-size: 16px;
@@ -1325,6 +1326,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
