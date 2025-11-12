@@ -189,7 +189,7 @@ h6 {
 .phone-link {
   color: white;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .phone-link:hover {
@@ -1226,7 +1226,7 @@ h6 {
   .phone-link {
     color: white;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .phone-link:hover {
@@ -1337,6 +1337,7 @@ h6 {
     gap: 30px;
   }
 }
+
 
 
 
