@@ -1217,6 +1217,11 @@ h6 {
     max-width: none;
   }
 
+  .phone-number {
+  color: white;
+  font-weight: 500;
+  }
+
   .hero__button {
     padding: 12px 24px;
     font-size: 16px;
@@ -1320,4 +1325,5 @@ h6 {
     gap: 30px;
   }
 }
+
 
