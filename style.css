@@ -905,7 +905,7 @@ h6 {
   border-color: orange;
 }
 
-/* Модальное окно — Lightbox */
+/* Модальное окно — Базовый класс */
 .modal {
   display: none;
   position: fixed;
@@ -914,9 +914,42 @@ h6 {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
   padding: 20px;
   box-sizing: border-box;
+}
+
+/* Модальное окно — Lightbox */
+.modal--lightbox {
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000; /* Ниже, чем у popup */
+}
+
+/* Модальное окно — Попап */
+.modal--popup {
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2000; /* Выше, чем у lightbox и header */
+}
+
+/* Общее содержимое модального окна */
+.modal__content {
+  background: white;
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Стили для lightbox-содержимого (например, изображения) */
+.modal--lightbox .modal__content {
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
 }
 
 .modal__img {
@@ -929,16 +962,28 @@ h6 {
 
 .modal__close {
   position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 10; /* Чтобы кнопка была поверх содержимого */
+}
+
+.modal--lightbox .modal__close {
+  color: white;
   top: 20px;
   right: 30px;
-  color: white;
   font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
 }
 
 .modal__close:hover {
+  color: #333;
+}
+
+.modal--lightbox .modal__close:hover {
   color: #ccc;
 }
 
@@ -986,102 +1031,6 @@ h6 {
   margin-left: auto;
   margin-right: auto;
   padding: 0 10px;
-}
-
-/* Модальное окно — попап */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.modal__content {
-  background: white;
-  max-width: 500px;
-  margin: 80px auto;
-  padding: 30px;
-  border-radius: 14px;
-  position: relative;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-  animation: modalFadeIn 0.3s ease-out;
-}
-
-.modal__close {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  font-size: 32px;
-  font-weight: bold;
-  color: #999;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.modal__close:hover {
-  color: #333;
-}
-
-.modal__title {
-  font-size: 24px;
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.modal__text {
-  text-align: center;
-  color: #555;
-  margin-bottom: 24px;
-  font-size: 16px;
-}
-
-.modal__input {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 16px;
-  border: 1px solid #333;
-  border-radius: 8px;
-  font-size: 16px;
-  box-sizing: border-box;
-  transition: border-color 0.3s;
-}
-
-.modal__input:focus {
-  outline: none;
-  border-color: orange;
-}
-
-.modal__button {
-  width: 100%;
-  padding: 14px;
-  background: orange;
-  color: whitesmoke;
-  font-size: 18px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.modal__button:hover {
-  background: #ff9800;
-}
-
-.modal__agreement {
-  font-size: 12px;
-  color: #777;
-  text-align: center;
-  margin-top: 16px;
-  line-height: 1.4;
 }
 
 /* Мобильные устройства (до 768px) */
@@ -1316,13 +1265,3 @@ h6 {
     gap: 30px;
   }
 }
-
-
-
-
-
-
-
-
-
-
