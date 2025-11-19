@@ -512,25 +512,84 @@
   </div>
 </footer>
     <!-- Попап (внизу body, один раз на странице) -->
-    <div class="modal" id="callModal">
+    <div class="modal modal--popup" id="callModal">
   <div class="modal__content">
     <span class="modal__close" id="closeCallModal">&times;</span>
     <h3 class="modal__title">Вызвать мастера</h3>
     <p class="modal__text">
-      Оставьте свой номер телефона — перезвоним в течение 30 минут, назовём
-      сроки и стоимость.
+      Оставьте свой номер телефона — перезвоним в течение 30 минут, назовём сроки и стоимость.
     </p>
-    <form class="modal__form" id="callForm" action="https://formspree.io/f/xvgvojvw" method="POST">
+    <form class="modal__form" id="callForm">
       <input type="text" name="name" class="modal__input" placeholder="Введите ваше имя *" required>
       <input type="tel" name="phone" class="modal__input" placeholder="Введите ваш номер телефона *" required>
       <button type="submit" class="modal__button">Позвоните мне</button>
       <p class="modal__agreement">
-        Нажимая на кнопку «Позвоните мне», вы соглашаетесь на обработку
-        персональных данных.
+        Нажимая на кнопку «Позвоните мне», вы соглашаетесь на обработку персональных данных.
       </p>
     </form>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('callForm');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const name = formData.get('name');
+        const phone = formData.get('phone');
+
+        const message = `📞 Новая заявка!\n\nИмя: ${name}\nТелефон: ${phone}`;
+
+        const telegramToken = 'ВАШ_ТОКЕН_БОТА';
+        const telegramChatId = 'ВАШ_CHAT_ID';
+        const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
+
+        fetch(telegramUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: message,
+                parse_mode: 'HTML'
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.ok) {
+                alert('Заявка успешно отправлена! Мы перезвоним вам в течение 30 минут.');
+                form.reset();
+
+                const formspreeUrl = 'https://formspree.io/f/xvgvojvw';
+                fetch(formspreeUrl, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        console.warn('Ошибка при отправке на Formspree');
+                    }
+                })
+                .catch(error => {
+                    console.warn('Ошибка сети при отправке на Formspree:', error);
+                });
+
+            } else {
+                console.error('Ошибка Telegram API:', data);
+                alert('Ошибка при отправке. Попробуйте позже.');
+            }
+        })
+        .catch(error => {
+            console.error('Ошибка при отправке в Telegram:', error);
+            alert('Ошибка сети. Попробуйте позже.');
+        });
+    });
+});
+</script>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q6F5B1VV9"></script>
 <script>
@@ -570,6 +629,7 @@
 </noscript>
   </body>
 </html>
+
 
 
 
