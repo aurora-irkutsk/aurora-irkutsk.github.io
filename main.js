@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   initGallery();
   initBurgerMenu();
-  initCallModal();
+  initCallModal(); // Теперь включает обработку формы
 });
 
 // =============
@@ -122,31 +122,120 @@ function initBurgerMenu() {
 }
 
 // =============
-// Попап "Вызвать мастера"
+// Попап "Вызвать мастера" + Обработка формы
 // =============
+
 function initCallModal() {
   const callModal = document.getElementById('callModal');
-  const openCallBtn = document.getElementById('openCallModal');
+  const openCallBtn = document.getElementById('openCallModal'); // Ищем кнопку по ID
   const closeCallBtn = document.getElementById('closeCallModal');
 
-  if (!callModal || !openCallBtn || !closeCallBtn) return;
+  // Если модальное окно существует
+  if (callModal) {
+    // Если кнопка с ID #openCallModal не найдена, ищем по классу или другому признаку
+    let triggerElement = openCallBtn;
+    if (!triggerElement) {
+      // Пример: ищем элемент с классом .call-master-btn (можете изменить под себя)
+      triggerElement = document.querySelector('.call-master-btn');
+    }
 
-  const openCallModal = () => {
-    callModal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-  };
+    if (triggerElement) {
+      const openCallModal = () => {
+        callModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      };
 
-  const closeCallModal = () => {
-    callModal.style.display = 'none';
-    document.body.style.overflow = '';
-  };
+      triggerElement.addEventListener('click', openCallModal);
+    }
 
-  openCallBtn.addEventListener('click', openCallModal);
-  closeCallBtn.addEventListener('click', closeCallModal);
+    // Обработчик закрытия
+    if (closeCallBtn) {
+      const closeCallModal = () => {
+        callModal.style.display = 'none';
+        document.body.style.overflow = '';
+      };
 
-  // Закрытие по клику на оверлей
-  window.addEventListener('click', (e) => {
-    if (e.target === callModal) closeCallModal();
-  });
+      closeCallBtn.addEventListener('click', closeCallModal);
+
+      // Закрытие по клику на оверлей
+      callModal.addEventListener('click', (e) => {
+        if (e.target === callModal) closeCallModal();
+      });
+    }
+  }
+
+  // --- Обработка формы в модальном окне ---
+  const callForm = document.getElementById('callForm');
+  if (callForm) {
+    // Функция для отправки данных в Telegram
+    const sendToTelegram = (formData) => {
+        const name = formData.get('name');
+        const phone = formData.get('phone');
+        const message = `📞 Новая заявка!\n\nИмя: ${name}\nТелефон: ${phone}`;
+        const telegramToken = '8507972786:AAHMOrUajwIcq9EXt2G3mcrkeYn28ahV_Do'; // ЗАМЕНИТЕ!
+        const telegramChatId = '5547229126';   // ЗАМЕНИТЕ!
+        const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
+
+        return fetch(telegramUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                chat_id: telegramChatId,
+                text: message,
+                parse_mode: 'HTML'
+            })
+        });
+    };
+
+    callForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Остановить стандартную отправку
+        const formData = new FormData(callForm);
+
+        sendToTelegram(formData)
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert('Заявка успешно отправлена! Мы перезвоним вам в течение 30 минут.');
+                    callForm.reset();
+                    // Закрыть модальное окно после успешной отправки (опционально)
+                    // document.getElementById('closeCallModal').click();
+                } else {
+                    console.error('Ошибка Telegram API:', data);
+                    alert('Ошибка при отправке. Попробуйте позже.');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке в Telegram:', error);
+                alert('Ошибка сети. Попробуйте позже.');
+            });
+    });
+  }
+
+  // --- Обработка формы в разделе "request" ---
+  const requestForm = document.getElementById('requestForm');
+  if (requestForm) {
+    requestForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Остановить стандартную отправку
+        const formData = new FormData(requestForm);
+
+        // Используем ту же функцию для отправки
+        sendToTelegram(formData)
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert('Заявка успешно отправлена! Мы перезвоним вам в течение 30 минут.');
+                    requestForm.reset();
+                } else {
+                    console.error('Ошибка Telegram API:', data);
+                    alert('Ошибка при отправке. Попробуйте позже.');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке в Telegram:', error);
+                alert('Ошибка сети. Попробуйте позже.');
+            });
+    });
+  }
 }
-
