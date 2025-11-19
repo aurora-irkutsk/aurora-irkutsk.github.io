@@ -549,9 +549,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         fetch(telegramUrl, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 chat_id: telegramChatId,
                 text: message,
@@ -563,21 +561,15 @@ document.addEventListener('DOMContentLoaded', function () {
             if (data.ok) {
                 alert('Заявка успешно отправлена! Мы перезвоним вам в течение 30 минут.');
                 form.reset();
-
                 const formspreeUrl = 'https://formspree.io/f/xvgvojvw';
                 fetch(formspreeUrl, {
                     method: 'POST',
                     body: formData
                 })
                 .then(response => {
-                    if (!response.ok) {
-                        console.warn('Ошибка при отправке на Formspree');
-                    }
+                    if (!response.ok) console.warn('Ошибка при отправке на Formspree');
                 })
-                .catch(error => {
-                    console.warn('Ошибка сети при отправке на Formspree:', error);
-                });
-
+                .catch(error => console.warn('Ошибка сети при отправке на Formspree:', error));
             } else {
                 console.error('Ошибка Telegram API:', data);
                 alert('Ошибка при отправке. Попробуйте позже.');
@@ -629,10 +621,3 @@ document.addEventListener('DOMContentLoaded', function () {
 </noscript>
   </body>
 </html>
-
-
-
-
-
-
-
