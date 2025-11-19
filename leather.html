@@ -245,59 +245,6 @@
     </form>
   </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('callForm');
-
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const name = formData.get('name');
-        const phone = formData.get('phone');
-
-        const message = `📞 Новая заявка!\n\nИмя: ${name}\nТелефон: ${phone}`;
-
-        const telegramToken = '8507972786:AAHMOrUajwIcq9EXt2G3mcrkeYn28ahV_Do';
-        const telegramChatId = '5547229126';
-        const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
-
-        fetch(telegramUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                chat_id: telegramChatId,
-                text: message,
-                parse_mode: 'HTML'
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.ok) {
-                alert('Заявка успешно отправлена! Мы перезвоним вам в течение 30 минут.');
-                form.reset();
-                const formspreeUrl = 'https://formspree.io/f/xvgvojvw';
-                fetch(formspreeUrl, {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => {
-                    if (!response.ok) console.warn('Ошибка при отправке на Formspree');
-                })
-                .catch(error => console.warn('Ошибка сети при отправке на Formspree:', error));
-            } else {
-                console.error('Ошибка Telegram API:', data);
-                alert('Ошибка при отправке. Попробуйте позже.');
-            }
-        })
-        .catch(error => {
-            console.error('Ошибка при отправке в Telegram:', error);
-            alert('Ошибка сети. Попробуйте позже.');
-        });
-    });
-});
-</script>
     <!-- Google Analytics -->
     <script
       async
@@ -387,6 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </noscript>
   </body>
 </html>
+
 
 
 
