@@ -172,8 +172,8 @@ function initCallModal() {
         const name = formData.get('name');
         const phone = formData.get('phone');
         const message = `📞 Новая заявка!\n\nИмя: ${name}\nТелефон: ${phone}`;
-        const telegramToken = '8507972786:AAHMOrUajwIcq9EXt2G3mcrkeYn28ahV_Do'; // ЗАМЕНИТЕ!
-        const telegramChatId = '5547229126';   // ЗАМЕНИТЕ!
+        const telegramToken = '8507972786:AAHMOrUajwIcq9EXt2G3mcrkeYn28ahV_Do';
+        const telegramChatId = '5547229126';
         const telegramUrl = `https://api.telegram.org/bot${telegramToken}/sendMessage`;
 
         return fetch(telegramUrl, {
@@ -239,3 +239,4 @@ function initCallModal() {
     });
   }
 }
+
