@@ -190,25 +190,47 @@ function initCallModal() {
     };
 
     callForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Остановить стандартную отправку
+        // Не отменяем отправку сразу. Позволим Formspree сработать, если Telegram не сработает.
         const formData = new FormData(callForm);
 
         sendToTelegram(formData)
-            .then(response => response.json())
+            .then(response => {
+                // Проверяем, был ли успешный ответ от Telegram API
+                if (!response.ok) {
+                    // Если API вернул ошибку (например, 400, 401, 404)
+                    return response.json().then(errData => {
+                        console.error('Ошибка Telegram API:', errData);
+                        alert('Ошибка при отправке в Telegram. Заявка отправлена на резервный канал.');
+                        // e.preventDefault(); // Не отменяем отправку на Formspree
+                        // Форма отправится на Formspree
+                    });
+                }
+                // Если ответ успешный
+                return response.json();
+            })
             .then(data => {
-                if (data.ok) {
+                // Проверяем поле 'ok' в JSON-ответе от Telegram
+                if (data && data.ok) {
+                    // Успешно отправлено в Telegram
                     alert('Заявка успешно отправлена! Мы перезвоним вам в течение 30 минут.');
                     callForm.reset();
-                    // Закрыть модальное окно после успешной отправки (опционально)
-                    // document.getElementById('closeCallModal').click();
-                } else {
-                    console.error('Ошибка Telegram API:', data);
-                    alert('Ошибка при отправке. Попробуйте позже.');
+                    // e.preventDefault(); // Не отменяем отправку на Formspree
+                    // Форма отправится на Formspree
+                } else if (data) {
+                    // API вернул успешный HTTP-статус, но в JSON поле 'ok' не true
+                    console.error('Ответ от Telegram, но ok=false:', data);
+                    alert('Ошибка при отправке в Telegram. Заявка отправлена на резервный канал.');
+                    // e.preventDefault(); // Не отменяем отправку на Formspree
+                    // Форма отправится на Formspree
                 }
+                // Если data === undefined (например, ошибка сети), то catch сработает
             })
             .catch(error => {
-                console.error('Ошибка при отправке в Telegram:', error);
-                alert('Ошибка сети. Попробуйте позже.');
+                // Ошибка сети, CORS, блокировка - fetch не смог выполниться
+                console.error('Ошибка сети при отправке в Telegram:', error);
+                alert('Не удалось отправить заявку в Telegram (возможно, ограничение доступа). Заявка отправлена на резервный канал.');
+                // e.preventDefault(); // Не отменяем отправку на Formspree
+                // Форма отправится на Formspree
             });
     });
   }
@@ -217,26 +239,41 @@ function initCallModal() {
   const requestForm = document.getElementById('requestForm');
   if (requestForm) {
     requestForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Остановить стандартную отправку
+        // Не отменяем отправку сразу. Позволим Formspree сработать, если Telegram не сработает.
         const formData = new FormData(requestForm);
 
         // Используем ту же функцию для отправки
         sendToTelegram(formData)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errData => {
+                        console.error('Ошибка Telegram API:', errData);
+                        alert('Ошибка при отправке в Telegram. Заявка отправлена на резервный канал.');
+                        // e.preventDefault(); // Не отменяем отправку на Formspree
+                        // Форма отправится на Formspree
+                    });
+                }
+                return response.json();
+            })
             .then(data => {
-                if (data.ok) {
+                if (data && data.ok) {
                     alert('Заявка успешно отправлена! Мы перезвоним вам в течение 30 минут.');
                     requestForm.reset();
-                } else {
-                    console.error('Ошибка Telegram API:', data);
-                    alert('Ошибка при отправке. Попробуйте позже.');
+                    // e.preventDefault(); // Не отменяем отправку на Formspree
+                    // Форма отправится на Formspree
+                } else if (data) {
+                    console.error('Ответ от Telegram, но ok=false:', data);
+                    alert('Ошибка при отправке в Telegram. Заявка отправлена на резервный канал.');
+                    // e.preventDefault(); // Не отменяем отправку на Formspree
+                    // Форма отправится на Formspree
                 }
             })
             .catch(error => {
-                console.error('Ошибка при отправке в Telegram:', error);
-                alert('Ошибка сети. Попробуйте позже.');
+                console.error('Ошибка сети при отправке в Telegram:', error);
+                alert('Не удалось отправить заявку в Telegram (возможно, ограничение доступа). Заявка отправлена на резервный канал.');
+                // e.preventDefault(); // Не отменяем отправку на Formspree
+                // Форма отправится на Formspree
             });
     });
   }
 }
-
